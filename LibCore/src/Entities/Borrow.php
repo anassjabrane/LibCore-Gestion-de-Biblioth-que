@@ -12,5 +12,16 @@ class Borrow {
         $this->borrowDate = $borrowDate;
         $this->returnDate = $returnDate;
     }
+     public function getBook() { return $this->book; }
+    
+    public function returnBook() {
+        $this->returnDate = date("Y-m-d");
+        $this->book->setAvailable(true);
+    }
+
+    public function __toString() {
+        $status = $this->returnDate ?? "Non retourné";
+        return "Livre: " . $this->book->getTitle() . " | Emprunté le: " . $this->borrowDate . " | Retour: " . $status;
+    }
     
     }
