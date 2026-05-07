@@ -27,7 +27,7 @@ class Library {
             echo " Livre non disponible\n";
         }
 
-        
+
     }
 
     public function returnBook($member, $book) {
@@ -38,5 +38,7 @@ class Library {
 
     public function getBooks() {
         return $this->books;
+
+        
     }
 }
