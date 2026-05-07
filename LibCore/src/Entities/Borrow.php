@@ -1,5 +1,8 @@
 <?php
 namespace LibCore\Entities; 
+namespace App\Entities;
+
+
 
 class Borrow {
     private $member;

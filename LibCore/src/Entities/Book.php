@@ -1,4 +1,5 @@
 <?php
+namespace App\Entities;
 class Book{
     public $title;
     public $auteur;
