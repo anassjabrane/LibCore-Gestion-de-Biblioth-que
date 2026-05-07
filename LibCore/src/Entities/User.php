@@ -13,6 +13,8 @@ class User {
         return $this->name;
     }
 
+
+    
     public function getEmail() {
         return $this->email;
     }
