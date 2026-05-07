@@ -1,7 +1,7 @@
 <?php
 
-// require_once "User.php";
-// require_once "Book.php";
+require_once "User.php";
+ require_once "Book.php";
 
 class Member extends User {
     private $borrowedBooks = [];
