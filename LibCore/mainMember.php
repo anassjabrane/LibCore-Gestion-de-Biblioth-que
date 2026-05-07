@@ -50,7 +50,7 @@ while (true) {
         $i = readline("Choisir index: ");
 
         if (isset($books[$i])) {
-            $libraray->borrowBook($member, $books[$i]);
+            $library->borrowBook($member, $books[$i]);
         } else {
             echo "Invalid choice\n";
         }
