@@ -12,6 +12,23 @@ class Book{
         $this->isAvialable = $isAvialable;
         
     }
+     public function getTitle(){
+       return $this->title;
+    }
+    public function getAuthor(){
+       return $this->auteur;
+    }
+    public function getIsbn(){
+       return $this->isbn;
+    }
+    public function getAvialable(){
+       return $this->isAvialable;
+    }
+    public function setAvialable($available){
+       $this->isAvialable=$available;
+    }
+
+    
     
     
     }
