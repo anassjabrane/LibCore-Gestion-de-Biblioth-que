@@ -28,6 +28,10 @@ class Book{
        $this->isAvialable=$available;
     }
 
+    public function __toString(){
+        return $this->title." ".$this->auteur." ".$this->isbn." Avialable ".($this->isAvialable?"NO":"yes");
+    }
+
     
     
     
