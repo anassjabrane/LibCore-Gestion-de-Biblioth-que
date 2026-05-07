@@ -10,7 +10,8 @@ abstract class Users{
         $this->name = $name;
         $this->email = $email;
     }
-    // 3. Les Getters (Bach n-qraw l-m3loumat)
+    
+    
     public function getName(): string {
         return $this->name;
     }
@@ -19,7 +20,7 @@ abstract class Users{
         return $this->email;
     }
 
-    
+
 
 }
 
