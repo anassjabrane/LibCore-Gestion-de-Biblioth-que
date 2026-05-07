@@ -12,4 +12,5 @@ class Borrow {
         $this->borrowDate = $borrowDate;
         $this->returnDate = $returnDate;
     }
+    
     }

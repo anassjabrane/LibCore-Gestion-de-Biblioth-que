@@ -1,26 +1,12 @@
 <?php
-
-namespace App\Entities;
-
-abstract class User{
-    private string $name;
-    private string $email;
-
-    public function __construct(string $name , string $email) {
-        $this->name = $name;
-        $this->email = $email;
+class User{
+    private $name;
+    private $email;
+    function __construct($name,$email){
+             $this->name=$name;
+             $this->email=$email;
     }
-    
-
-    public function getName(): string {
-        return $this->name;
+    public function __toString(){
+        return $this->name." ".$this->email;
     }
-
-    public function getEmail(): string {
-        return $this->email;
-    }
-
-
-
 }
-
