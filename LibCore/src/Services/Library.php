@@ -26,6 +26,8 @@ class Library {
         } else {
             echo " Livre non disponible\n";
         }
+
+        
     }
 
     public function returnBook($member, $book) {
