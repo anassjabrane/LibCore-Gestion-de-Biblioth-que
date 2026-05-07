@@ -2,7 +2,7 @@
 
 namespace App\Entities;
 
-abstract class Users{
+abstract class User{
     private string $name;
     private string $email;
 
@@ -11,7 +11,7 @@ abstract class Users{
         $this->email = $email;
     }
     
-    
+
     public function getName(): string {
         return $this->name;
     }
