@@ -64,4 +64,9 @@ class Library {
 
         return null;
     }
+    public function deleteBook($isbn){
+    $sql = "DELETE FROM books WHERE isbn = ?";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->execute([$isbn]);
+}
 }

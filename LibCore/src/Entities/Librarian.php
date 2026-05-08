@@ -1,34 +1,27 @@
-<?php
-
+<?php 
 namespace App\Entities;
+
+
+use App\Services\Library;
 
 class Librarian extends User {
 
-    private $Library;
+    private $library;
 
-    public function __construct($name, $email, $library) {
-
-        parent::__construct($name, $email);
-
-        $this->Library = $library;
-    }
-     public function addBook($book) {
-        $this->Library->addBook($book);
+    public function __construct($name,$email,Library $library){
+        parent::__construct($name,$email);
+        $this->library = $library;
     }
 
-    public function createMembre($membre) {
-        $this->Library->addMembre($membre);
+    public function addBook($book){
+        return $this->library->addBook($book);
     }
 
-    public function displayBooks() {
-        $this->Library->displayBooks();
+    public function displayBooks(){
+        return $this->library->displayBooks();
     }
 
-    public function deleteBook($bookD) {
-        $this->Library->deleteBook($bookD);
-    }
-
-    public function __toString() {
-        return parent::__toString()." Librarian";
+    public function deleteBook($isbn){
+        return $this->library->deleteBook($isbn);
     }
 }

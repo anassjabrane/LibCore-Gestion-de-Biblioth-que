@@ -1,56 +1,66 @@
 <?php
-require_once "src/Entities/book.php";
-require_once "src/Entities/librarian.php";
-require_once "src/Entities/user.php";
+
+require_once "src/Entities/User.php";
+require_once "src/Entities/Book.php";
+require_once "src/Entities/Librarian.php";
+require_once "Config/database.php";
 require_once "src/Services/Library.php";
-$library1=new Library();
-$librarian=new Librarian("salah","salahtabit12@gmail.com",$library1);
-echo $librarian;
-// $book=new Book("www","salah","98958-hjh-6777",true);
-// $librarian->addBook($book);
-// $librarian->displayBooks();
-// $librarian->deleteBook("98958-hjh-6777");
+
+use App\Entities\Book;
+use App\Entities\Librarian;
+use App\Services\Library;
+
+$library1 = new Library();
+$librarian = new Librarian("salah", "salahtabit12@gmail.com", $library1);
+
+echo "Connecté en tant que: " . $librarian->getName() . "\n";
 
 while (true) {
-    echo("############Welcome In our Programme ################");
-    echo("1:Display Books");
-    echo("2:add Book");
-    echo("3:delete Book");
-    echo("4:add Membre");
-    echo ("0:exist");
-    $answer=readLine();
+
+    echo "\n############ Welcome In our Programme ################\n";
+    echo "1: Display Books\n";
+    echo "2: Add Book\n";
+    echo "3: Delete Book\n";
+    echo "4: Add Member\n";
+    echo "0: Exit\n";
+
+    echo "Choose option: ";
+    $answer = trim(fgets(STDIN));
+
     switch ($answer) {
-        case 1:
-           $librarian->displayBooks();
+
+        case "1":
+            $librarian->displayBooks();
             break;
-        case 2:
-            echo ("write the name of the book\n");
-            $nameB=readLine();
-            echo ("write the name of auther of  the book\n");
-            $nameA=readLine();
-            echo ("write the isbn of  the book\n");
-            $isbn=readLine();
-            echo ("write 1 if available and 0 if is inavialable of the book\n");
-            $avai=readLine();
-            if($avai==1){
-              $book=new Book($nameB,$nameA,$isbn,true);
-              $librarian->addBook($book);
-            }elseif($avai==0){
-              $book=new Book($nameB,$nameA,$isbn,false);
-              $librarian->addBook($book);
-            }else{
-                echo "you should chose beetween 0 and 1\n";
-            }
+
+        case "2":
+            echo "Book name: ";
+            $title = trim(fgets(STDIN));
+
+            echo "Author: ";
+            $author = trim(fgets(STDIN));
+
+            echo "ISBN: ";
+            $isbn = trim(fgets(STDIN));
+
+            echo "1 available / 0 not: ";
+            $avail = (int) trim(fgets(STDIN));
+
+            $book = new Book($title, $author, $isbn, $avail === 1);
+
+            echo $librarian->addBook($book) . "\n";
             break;
-        case 0:
-           echo("see you later");
-            exit;
-        case 3:
-            echo("write the isbn of the book");
-            $isbn=readLine();
+
+        case "3":
+            echo "ISBN to delete: ";
+            $isbn = trim(fgets(STDIN));
             $librarian->deleteBook($isbn);
             break;
+
+        case "0":
+            exit;
+
         default:
-            echo("number doesnt exist in the menu\n");
+            echo "Invalid option\n";
     }
 }
