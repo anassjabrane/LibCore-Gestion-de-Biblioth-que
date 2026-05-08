@@ -1,9 +1,23 @@
-<?php
-
-require_once "User.php";
-
+<?php 
+require_once 'User.php';
 class Librarian extends User {
-    public function addBook($library, $book) {
-        $library->addBook($book);
+
+    private $library;
+
+    public function __construct($name,$email,Library $library){
+        parent::__construct($name,$email);
+        $this->library = $library;
+    }
+
+    public function addBook($book){
+        return $this->library->addBook($book);
+    }
+
+    public function displayBooks(){
+        return $this->library->displayBooks();
+    }
+
+    public function deleteBook($isbn){
+        return $this->library->deleteBook($isbn);
     }
 }

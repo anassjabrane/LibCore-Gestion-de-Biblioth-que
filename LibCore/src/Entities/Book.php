@@ -27,7 +27,7 @@ class Book {
     public function isAvailable() {
         return $this->isAvailable;
     }
-
+    public function getAvailable(){ return $this->isAvailable; }
     public function getStatus() {
         return $this->isAvailable ? "Disponible" : "Emprunté";
     }
