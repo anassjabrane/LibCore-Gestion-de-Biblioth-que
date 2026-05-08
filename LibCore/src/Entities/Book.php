@@ -24,8 +24,6 @@ class Book {
         return $this->isbn;
     }
 
-    
-
     public function isAvailable() {
         return $this->isAvailable;
     }
