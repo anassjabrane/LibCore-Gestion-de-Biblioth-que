@@ -13,9 +13,6 @@ $library->addBook($book1);
 $library->addBook($book2);
 
 $member = new Member("Sara", "sara@gmail.com");
-
-
-
 while (true) {
 
     echo "\n===== MENU MEMBER =====\n";

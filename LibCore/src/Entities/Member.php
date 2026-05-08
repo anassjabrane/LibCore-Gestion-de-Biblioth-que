@@ -14,9 +14,6 @@ class Member extends User {
             echo "Livre déjà emprunté\n";
         }
     }
-
-    
-
     public function returnBook($book) {
         foreach ($this->borrowedBooks as $k => $b) {
             if ($b === $book) {
