@@ -1,19 +1,16 @@
 <?php
-namespace App\Entities;
 class Book{
     public $title;
     public $auteur;
     public $isbn;
     public $isAvialable;
-    
-    public function __construct( $title ,$auteur ,$isbn , $isAvialable) {
-        $this->title = $title;
-        $this->auteur = $auteur;
-        $this->isbn = $isbn;
-        $this->isAvialable = $isAvialable;
-        
+    function __construct($title,$auteur,$isbn,$isAvialable){
+        $this->title=$title;
+        $this->auteur=$auteur;
+        $this->isbn=$isbn;
+        $this->isAvialable=$isAvialable;
     }
-     public function getTitle(){
+    public function getTitle(){
        return $this->title;
     }
     public function getAuthor(){
@@ -28,12 +25,7 @@ class Book{
     public function setAvialable($available){
        $this->isAvialable=$available;
     }
-
     public function __toString(){
-        return $this->title." ".$this->auteur." ".$this->isbn." Avialable ".($this->isAvialable?"NO":"yes");
+        return $this->title." ".$this->auteur." ".$this->isbn." Avialable ".($this->isAvialable?"YES":"NO");
     }
-
-    
-    
-    
-    }
+}
